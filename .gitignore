@@ -1,0 +1,4 @@
+bin
+gen
+libs/android-support-v4.jar
+libs/netty-3.7.0.Final-SNAPSHOT.jar
