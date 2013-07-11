@@ -7,6 +7,15 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
+    
+     <TextView
+        android:id="@+id/textView2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center_horizontal"
+        android:textSize="25dp"
+        android:text="" />
 
     <EditText
         android:id="@+id/editText1"
@@ -16,8 +25,10 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
+        android:gravity="center_horizontal"
         android:ems="10"
         android:inputType="textMultiLine"
         android:text="This is some sample text that I hope will wrap around when it gets long enough" />
+
 
 </RelativeLayout>
