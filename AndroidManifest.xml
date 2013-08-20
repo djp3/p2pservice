@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="edu.uci.ics.luci.p2p4java.p2pchat"
+    package="edu.uci.ics.luci.p2p4java.p2p4android.p2pservice"
     android:versionCode="1"
     android:versionName="1.0" >
 
     <uses-sdk
         android:minSdkVersion="17"
         android:targetSdkVersion="17" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+	<uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@android:style/Theme.Light" >
         <activity
-            android:name="edu.uci.ics.luci.p2p4java.p2pchat.MainActivity"
+            android:name="edu.uci.ics.luci.p2p4java.p2p4android.p2pservice.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,6 +24,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <service android:name="edu.uci.ics.luci.p2p4java.p2p4android.lib.P2PService"
+            	 android:label="Peer to Peer Networking Service"
+            	 android:exported="true"
+            	 android:permission="android.permission.INTERNET">
+       	</service>
+        
     </application>
 
 </manifest>

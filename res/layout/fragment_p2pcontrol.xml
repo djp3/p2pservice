@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:text="@string/service_status"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/statusText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:inputType="textMultiLine"
+        android:minHeight="60dp"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:text="@string/dummy_text"
+        android:textColor="#555555"
+        tools:ignore="LabelFor" />
+    
+    <EditText
+        android:id="@+id/heartbeatText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:inputType="textMultiLine"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:text="@string/dummy_text"
+        android:textColor="#555555"
+        tools:ignore="LabelFor" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+   		android:orientation="horizontal"
+   		android:baselineAligned="false">
+   		
+		<LinearLayout
+        	android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+            android:layout_weight="1"
+			android:layout_gravity="center"
+			android:gravity="center"
+   			android:orientation="vertical" >
+   			
+        	<Button
+        	    android:id="@+id/buttonStart"
+        	    style="?android:attr/buttonBarButtonStyle"
+        		android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+	            android:enabled="false"
+	            android:text="@string/start_p2p" />
+
+	        <Button
+	            android:id="@+id/buttonStop"
+	            style="?android:attr/buttonBarButtonStyle"
+        		android:layout_width="fill_parent"
+	    		android:layout_height="wrap_content"
+	            android:enabled="false"
+	            android:text="@string/stop_p2p" />
+		</LinearLayout>
+		
+		<LinearLayout
+        	android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+            android:layout_weight="1"
+			android:layout_gravity="center"
+			android:gravity="center"
+   			android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/buttonBind"
+            style="?android:attr/buttonBarButtonStyle"
+        	android:layout_width="fill_parent"
+    		android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="@string/bind_p2p" />
+
+        <Button
+            android:id="@+id/buttonUnbind"
+            style="?android:attr/buttonBarButtonStyle"
+        	android:layout_width="fill_parent"
+    		android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="@string/unbind_p2p" />
+		</LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
