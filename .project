@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>p2pchat</name>
+	<name>p2pservice</name>
 	<comment></comment>
 	<projects>
+		<project>p2p4android</project>
+		<project>p2p4java</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

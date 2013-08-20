@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">P2PChat</string>
-    <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
-
+    <string name="app_name">Peer to Peer Network Controls</string>
+    <string name="dummy_text">This is some sample text that I hope will wrap around when it gets long enough</string>
+    <string name="service_status">Peer to Peer Service Status</string>
+    <string name="start_p2p">Start</string>
+    <string name="stop_p2p">Stop </string>
+    <string name="bind_p2p">Connect </string>
+    <string name="unbind_p2p">Disconnect</string>
+    
 </resources>
