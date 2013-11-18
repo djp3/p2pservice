@@ -14,8 +14,10 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.Messenger;
+import android.os.RemoteException;
 import android.util.Log;
 import android.widget.TextView;
+import edu.uci.ics.luci.p2p4java.endpoint.StringMessageElement;
 import edu.uci.ics.luci.p2p4java.p2p4android.lib.P2PService;
 import edu.uci.ics.luci.p2p4java.p2p4android.lib.P2PStatus;
 import edu.uci.ics.luci.p2p4java.p2p4android.lib.ServiceManager;
@@ -266,6 +268,32 @@ public class MainActivity extends Activity implements ControlFragment.P2PEngine 
 		}
 	}
 	
+	
+	int count = 0;
+	@Override
+	public void onP2PStartSource(){
+		
+		edu.uci.ics.luci.p2p4java.endpoint.Message packet = new edu.uci.ics.luci.p2p4java.endpoint.Message();
+		Date date = new Date(System.currentTimeMillis());
+		String data = date.toString();
+		StringMessageElement sme = new StringMessageElement(examples.SourceServer.MESSAGE_NAME_SPACE,"Hello World, This is message #"+(count++)+", time:"+data , null);
+		
+		packet.addMessageElement(null,sme);
+
+		/* Send the data to the service for forwarding to the network */
+		Message message = Message.obtain(null, P2PService.MSG_TO_SEND_DATA,packet);
+		
+		try {
+			service.send(message);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Override
+	public void onP2PStopSource(){
+		//TODO: Put code here
+	}
 	
 	@Override
 	public void onP2PStop(){

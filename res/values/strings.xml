@@ -8,5 +8,7 @@
     <string name="stop_p2p">Stop </string>
     <string name="bind_p2p">Connect </string>
     <string name="unbind_p2p">Disconnect</string>
+    <string name="start_source">Start Source Server</string>
+    <string name="stop_source">Stop Source Server</string>
     
 </resources>

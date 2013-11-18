@@ -21,6 +21,8 @@ public class ControlFragment extends Fragment {
 		public void onP2PStop();
 		public void onP2PBind();
 		public void onP2PUnbind();
+		public void onP2PStartSource();
+		public void onP2PStopSource();
 		public int isP2PServiceRunning();
 		public int isP2PServiceBound();
 	}
@@ -31,6 +33,8 @@ public class ControlFragment extends Fragment {
 	private Button buttonStop = null;
 	private Button buttonBind = null;
 	private Button buttonUnbind = null;
+	private Button buttonStartSource = null;
+	private Button buttonStopSource = null;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -77,6 +81,28 @@ public class ControlFragment extends Fragment {
 			public void onClick(View v) {
 				if(p2pEngineListener != null){
 					p2pEngineListener.onP2PUnbind();
+				}
+				setUIView();
+			}
+		});
+		
+		buttonStartSource = (Button) view.findViewById(R.id.buttonStartSource);
+		buttonStartSource.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if(p2pEngineListener != null){
+					p2pEngineListener.onP2PStartSource();
+				}
+				setUIView();
+			}
+		});
+		
+		buttonStopSource = (Button) view.findViewById(R.id.buttonStopSource);
+		buttonStopSource.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if(p2pEngineListener != null){
+					p2pEngineListener.onP2PStopSource();
 				}
 				setUIView();
 			}
@@ -147,12 +173,20 @@ public class ControlFragment extends Fragment {
 				buttonStop.setEnabled(false);
 			}
 		}
+		
+		
 		if(bound == 1){
 			if(buttonBind != null){
 				buttonBind.setEnabled(false);
 			}
 			if(buttonUnbind != null){
 				buttonUnbind.setEnabled(true);
+			}
+			if(buttonStartSource != null){
+				buttonStartSource.setEnabled(true);
+			}
+			if(buttonStopSource != null){
+				buttonStopSource.setEnabled(true);
 			}
 		}
 		else if(bound == 0){
@@ -169,6 +203,13 @@ public class ControlFragment extends Fragment {
 			if(buttonUnbind != null){
 				buttonUnbind.setEnabled(false);
 			}
+			
+			if(buttonStartSource != null){
+				buttonStartSource.setEnabled(false);
+			}
+			if(buttonStopSource != null){
+				buttonStopSource.setEnabled(false);
+			}
 		}
 		else {
 			if(buttonBind != null){
@@ -176,6 +217,12 @@ public class ControlFragment extends Fragment {
 			}
 			if(buttonUnbind != null){
 				buttonUnbind.setEnabled(false);
+			}
+			if(buttonStartSource != null){
+				buttonStartSource.setEnabled(false);
+			}
+			if(buttonStopSource != null){
+				buttonStopSource.setEnabled(false);
 			}
 		}
 	}
